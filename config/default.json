@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://ddhash:ddhash@cluster0.coahn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://ddhash:ddhash@cluster0.coahn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret": "secret"
 }
