@@ -50,6 +50,9 @@ const ContactState = (props) => {
   };
 
   //   DELETE_CONTACT
+  const deleteContact = (id) => {
+    dispatch({ type: DELETE_CONTACT, payload: id });
+  };
 
   //   SET_CURRENT
 
@@ -66,7 +69,9 @@ const ContactState = (props) => {
   //   REMOVE_ALERT
 
   return (
-    <contactContext.Provider value={{ contacts: state.contacts, addContact }}>
+    <contactContext.Provider
+      value={{ contacts: state.contacts, addContact, deleteContact }}
+    >
       {props.children}
     </contactContext.Provider>
   );
