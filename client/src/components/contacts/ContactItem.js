@@ -30,9 +30,14 @@ export const ContactItem = ({ contact }) => {
         </span>
       </h3>
       <ul className="list">
-        {email && (
+        {phone && (
           <li>
             <i className="fas fa-phone" /> {phone}
+          </li>
+        )}
+        {email && (
+          <li>
+            <i className="fas fa-envelope-open  " /> {email}
           </li>
         )}
       </ul>
