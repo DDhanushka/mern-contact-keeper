@@ -29,7 +29,7 @@ const ContactState = (props) => {
         name: "ammo nethee",
         email: "ddd@gg.com",
         phone: "34533",
-        type: "professional",
+        type: "personal",
       },
       {
         id: 3,
@@ -44,6 +44,10 @@ const ContactState = (props) => {
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
   //   ADD_CONTACT
+  const addContact = (contact) => {
+    contact.id = uuid.v4();
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   //   DELETE_CONTACT
 
@@ -62,7 +66,7 @@ const ContactState = (props) => {
   //   REMOVE_ALERT
 
   return (
-    <contactContext.Provider value={{ contacts: state.contacts }}>
+    <contactContext.Provider value={{ contacts: state.contacts, addContact }}>
       {props.children}
     </contactContext.Provider>
   );
